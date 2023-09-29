@@ -733,10 +733,10 @@ var MapEditor = exports.MapEditor = function (_React$Component) {
             };
 
             // Highlight buttons when action is in progress
-            var addNodeStyle = { color: "grey" };
-            var addEdgeStyle = { color: "grey", marginLeft: 10 };
-            var deleteNodeStyle = { color: "grey", marginLeft: 10 };
-            var deleteEdgeStyle = { color: "grey", marginLeft: 10 };
+            var addNodeStyle = {};
+            var addEdgeStyle = { marginLeft: 10 };
+            var deleteNodeStyle = { marginLeft: 10 };
+            var deleteEdgeStyle = { marginLeft: 10 };
             if (this.state.pendingAction) {
                 if (this.state.pendingAction.action === "add-node") {
                     addNodeStyle = { color: "steelblue" };
@@ -760,10 +760,10 @@ var MapEditor = exports.MapEditor = function (_React$Component) {
                     {
                         type: "button",
                         style: addNodeStyle,
-                        className: "btn btn-default btn-xs",
+                        className: "btn btn-primary btn-sm",
                         onClick: this.handleAddNode
                     },
-                    _react2.default.createElement("span", { className: "glyphicon glyphicon-plus", "aria-hidden": "true" }),
+                    _react2.default.createElement("i", { className: "fa fa-plus" }),
                     " Node"
                 ),
                 _react2.default.createElement(
@@ -771,10 +771,10 @@ var MapEditor = exports.MapEditor = function (_React$Component) {
                     {
                         type: "button",
                         style: addEdgeStyle,
-                        className: "btn btn-default btn-xs",
+                        className: "btn btn-primary btn-sm",
                         onClick: this.handleAddEdge
                     },
-                    _react2.default.createElement("span", { className: "glyphicon glyphicon-plus", "aria-hidden": "true" }),
+                    _react2.default.createElement("i", { className: "fa fa-plus" }),
                     " Edge"
                 ),
                 _react2.default.createElement(
@@ -782,10 +782,10 @@ var MapEditor = exports.MapEditor = function (_React$Component) {
                     {
                         type: "button",
                         style: deleteNodeStyle,
-                        className: "btn btn-default btn-xs",
+                        className: "btn btn-danger btn-sm",
                         onClick: this.handleDeleteNode
                     },
-                    _react2.default.createElement("span", { className: "glyphicon glyphicon-minus", "aria-hidden": "true" }),
+                    _react2.default.createElement("i", { className: "fa fa-minus" }),
                     " Node"
                 ),
                 _react2.default.createElement(
@@ -793,10 +793,10 @@ var MapEditor = exports.MapEditor = function (_React$Component) {
                     {
                         type: "button",
                         style: deleteEdgeStyle,
-                        className: "btn btn-default btn-xs",
+                        className: "btn btn-danger btn-sm",
                         onClick: this.handleDeleteEdge
                     },
-                    _react2.default.createElement("span", { className: "glyphicon glyphicon-minus", "aria-hidden": "true" }),
+                    _react2.default.createElement("i", { className: "fa fa-minus" }),
                     " Edge"
                 ),
                 _react2.default.createElement(

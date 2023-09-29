@@ -1,6 +1,6 @@
 {
   "name": "react-network-diagrams-hso",
-  "version": "0.16.7",
+  "version": "0.16.12",
   "keywords": [
     "network",
     "circuits",
@@ -43,10 +43,10 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "d3-hierarchy": "^1.1.9",
-    "d3-scale": "^2.0.0",
+    "d3-scale": "^4.0.2",
     "keymirror": "^0.1.1",
-    "prop-types": "^15.5.10",
-    "underscore": "^1.8.3",
+    "prop-types": "^15.8.1",
+    "underscore": "^1.13.6",
     "victor": "^1.1.0"
   },
   "devDependencies": {
