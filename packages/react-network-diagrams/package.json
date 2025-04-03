@@ -1,6 +1,6 @@
 {
   "name": "react-network-diagrams-hso",
-  "version": "0.16.12",
+  "version": "0.16.13",
   "keywords": [
     "network",
     "circuits",
@@ -42,10 +42,12 @@
   "license": "BSD-3-Clause-LBNL",
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "d3-format": "^3.1.0",
     "d3-hierarchy": "^1.1.9",
     "d3-scale": "^4.0.2",
     "keymirror": "^0.1.1",
     "prop-types": "^15.8.1",
+    "react-select": "^5.7.4",
     "underscore": "^1.13.6",
     "victor": "^1.1.0"
   },
@@ -78,7 +80,8 @@
     "react-scripts": "^1.1.0"
   },
   "peerDependencies": {
-    "react": "^15.3.1 || ^16.0"
+    "react": "^15.3.1 || ^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^15.3.1 || ^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "eslintConfig": {
     "extends": "react-app"
