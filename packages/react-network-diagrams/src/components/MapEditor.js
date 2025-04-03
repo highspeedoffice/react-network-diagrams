@@ -11,7 +11,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import _ from "underscore";
-import Select from "react-select";
 
 import { BaseMap } from "./BaseMap";
 import { Node } from "./Node";
@@ -413,15 +412,32 @@ export class MapEditor extends React.Component {
 
     renderChoiceProperty(attr, options, cvalue) {
         return (
-            <Select
-                value={options.filter(({value}) => value === cvalue)}
-                searchable={false}
-                clearable={false}
-                options={options}
-                getOptionLabel={({label}) => label}
-                getOptionValue={({value}) => value}
-                onChange={val => this.handleChange(attr, val.value)}
-            />
+            <div style={{ position: "relative" }}>
+                <select
+                    value={cvalue}
+                    onChange={ev => this.handleChange(attr, ev.target.value)}
+                    className="form-control input-sm"
+                >
+                    {options.map(option => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+                <div style={{
+                    position: "absolute",
+                    top: "0",
+                    right: "0",
+                    bottom: "0",
+                    width: "25px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    pointerEvents: "none"
+                }}>
+                    <i className="fa fa-chevron-down" style={{ fontSize: "10px" }}></i>
+                </div>
+            </div>
         );
     }
 
