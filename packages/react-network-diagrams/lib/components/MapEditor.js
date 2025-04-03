@@ -19,10 +19,6 @@ var _underscore = require("underscore");
 
 var _underscore2 = _interopRequireDefault(_underscore);
 
-var _reactSelect = require("react-select");
-
-var _reactSelect2 = _interopRequireDefault(_reactSelect);
-
 var _BaseMap = require("./BaseMap");
 
 var _Node = require("./Node");
@@ -507,26 +503,42 @@ var MapEditor = exports.MapEditor = function (_React$Component) {
         value: function renderChoiceProperty(attr, options, cvalue) {
             var _this5 = this;
 
-            return _react2.default.createElement(_reactSelect2.default, {
-                value: options.filter(function (_ref) {
-                    var value = _ref.value;
-                    return value === cvalue;
-                }),
-                searchable: false,
-                clearable: false,
-                options: options,
-                getOptionLabel: function getOptionLabel(_ref2) {
-                    var label = _ref2.label;
-                    return label;
-                },
-                getOptionValue: function getOptionValue(_ref3) {
-                    var value = _ref3.value;
-                    return value;
-                },
-                onChange: function onChange(val) {
-                    return _this5.handleChange(attr, val.value);
-                }
-            });
+            return _react2.default.createElement(
+                "div",
+                { style: { position: "relative" } },
+                _react2.default.createElement(
+                    "select",
+                    {
+                        value: cvalue,
+                        onChange: function onChange(ev) {
+                            return _this5.handleChange(attr, ev.target.value);
+                        },
+                        className: "form-control input-sm"
+                    },
+                    options.map(function (option) {
+                        return _react2.default.createElement(
+                            "option",
+                            { key: option.value, value: option.value },
+                            option.label
+                        );
+                    })
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { style: {
+                            position: "absolute",
+                            top: "0",
+                            right: "0",
+                            bottom: "0",
+                            width: "25px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            pointerEvents: "none"
+                        } },
+                    _react2.default.createElement("i", { className: "fa fa-chevron-down", style: { fontSize: "10px" } })
+                )
+            );
         }
     }, {
         key: "renderNodeProperties",
